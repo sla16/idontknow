@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -29,7 +28,7 @@ class App extends Component {
 
     return (
       <div className="container" style={{color: `rgb(${r},${g},${b})`}}>
-        I am not dating food
+        <p className="spinner">I am not dating food</p>
       </div>
     );
   }
