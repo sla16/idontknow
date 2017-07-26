@@ -1,0 +1,52 @@
+.Main__center {
+  position: relative;
+  text-align: center;
+  transition: height 2s;
+}
+
+.Main__button {
+  background-color: #87bdd8;
+  border: none;
+  border-radius: 5px;
+  color: darkslateblue;
+  cursor: pointer;
+  height: 25px;
+  width: 100px;
+}
+
+.Main__button:hover {
+  box-shadow: 0px 0px 30px 0px rgba(135, 189, 216, 0.67);
+}
+
+.Main__button-container {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.Main__spinner-container {
+  font-weight: bold;
+  font-size: x-large;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.Main__spinner {
+  animation-name: spin, depth;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  text-align: center;
+}
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-360deg); }
+}
+@keyframes depth {
+  0 { text-shadow: 0 0 black; }
+  25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+  50% { text-shadow: 0 0 black; }
+  75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+  100% { text-shadow: 0 0 black; }
+}

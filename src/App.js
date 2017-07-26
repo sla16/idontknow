@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import LeftPanel from './controls/LeftPanel/LeftPanel'
+import Main from './Main'
 import './App.css';
 
 class App extends Component {
   constructor (props) {
     super(props);
-    this.state = {
-      r: 0,
-      g: 255,
-      b: 0
-    }
+    this.state = {}
   }
 
-  changeColors = () => {
-    this.setState ({
-      r: Math.floor(Math.random() * 255) + 1,
-      g: Math.floor(Math.random() * 255) + 1,
-      b: Math.floor(Math.random() * 255) + 1
-    });
-  }
-
-  render() {
-    const { r, g, b } = this.state
-
-    setTimeout(() => {
-      this.changeColors()
-    }, 500)
-
+  render () {
     return (
-      <div className="container" style={{color: `rgb(${r},${g},${b})`}}>
-        <p className="spinner">I am not dating food</p>
+      <div>
+        <LeftPanel />
+        <div className="content">
+          <Router>
+            <Route exact path="/" component={Main} />
+          </Router>
+        </div>
       </div>
     );
   }

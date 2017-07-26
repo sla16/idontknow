@@ -1,0 +1,6 @@
+.LeftPanel {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 15em;
+}

@@ -1,46 +1,18 @@
-.App {
-  text-align: center;
+body {
+  background-color: #cfe0e8;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="button"]:visited {
+  border: none;
+  outline: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.container {
-  font-weight: bold;
-  font-size: x-large;
+.content {
+  display: inline-block;
+  height: 100%;
+  left: 15em;
   position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.spinner {
-  animation-name: spin, depth;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  text-align: center;
-}
-@keyframes spin {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(-360deg); }
-}
-@keyframes depth {
-  0 { text-shadow: 0 0 black; }
-  25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
-  50% { text-shadow: 0 0 black; }
-  75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
-  100% { text-shadow: 0 0 black; }
+  width: 85%;
 }
