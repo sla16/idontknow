@@ -1,0 +1,8 @@
+.TopPanel {
+  border: solid #0099CC 1px;
+  height: 6em;
+  left: 15em;
+  margin-left: 1px;
+  position: fixed;
+  width: calc(100% - 15em);
+}

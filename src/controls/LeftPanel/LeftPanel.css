@@ -1,6 +1,16 @@
 .LeftPanel {
+  border: solid #0099CC 1px;
   height: 100%;
   left: 0;
   position: absolute;
   width: 15em;
+}
+
+.LeftPanel__logo {
+  border-bottom: solid #0099CC 1px;
+  height: 6em;
+}
+
+.LeftPanel_list {
+  height: 100%;
 }

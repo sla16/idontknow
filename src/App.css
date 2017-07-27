@@ -12,7 +12,7 @@ input[type="button"]:visited {
 .content {
   display: inline-block;
   height: 100%;
-  left: 15em;
+  overflow: hidden;
   position: absolute;
-  width: 85%;
+  width: 100%;
 }
