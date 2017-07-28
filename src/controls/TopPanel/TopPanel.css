@@ -1,8 +1,22 @@
 .TopPanel {
   border: solid #0099CC 1px;
+  display: flex;
   height: 6em;
   left: 15em;
   margin-left: 1px;
   position: fixed;
   width: calc(100% - 15em);
+}
+
+.TopPanel__buttons-outer-container {
+  align-items: center;
+  display: flex;
+  position:relative;
+  width:100%;
+}
+
+.TopPanel__buttons-inner-container {
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
 }

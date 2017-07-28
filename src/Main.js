@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
+import Button from './controls/MaterialUI/Button'
 import './Main.css';
 
 export default class Main extends Component {
@@ -8,7 +10,11 @@ export default class Main extends Component {
     this.state = {
       height: '100%'
     }
-  }
+  };
+
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
 
   handleFoodClick = () => {
     this.setState({
@@ -20,23 +26,18 @@ export default class Main extends Component {
         }, 200)
       }, 2000)
     })
-  }
+  };
 
   render () {
     return (
       <div className="Main__center" style={{height: `${this.state.height}`}}>
         <div className="Main__button-container">
-          <input
-            className="Main__button"
-            type="button"
-            value="Idk, food"
-            onClick={this.handleFoodClick} />
+          <Button
+            labelMessage='Idk, food'
+            onTouchTap={this.handleFoodClick}
+            primary={true} />
         </div>
       </div>
     )
-  }
-}
-
-Main.contextTypes = {
-  router: React.PropTypes.func.isRequired
+  };
 }

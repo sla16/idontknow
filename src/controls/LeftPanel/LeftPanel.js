@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 import './LeftPanel.css';
 
 export default class LeftPanel extends Component {
-  constructor (props, context) {
-    super(props, context);
-  }
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
 
   returnHome = () => {
     this.context.router.history.push('/');
-  }
+  };
 
   render () {
     return (
@@ -24,9 +25,5 @@ export default class LeftPanel extends Component {
         </div>
       </div>
     )
-  }
-}
-
-LeftPanel.contextTypes = {
-  router: React.PropTypes.func.isRequired
+  };
 }
