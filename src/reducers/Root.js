@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
-import FoodReducer from './FoodReducer'
+import places from './places'
 
-const rootReducer = combineReducers({
-  FoodReducer
+const appReducer = combineReducers({
+  places
 })
+
+function rootReducer (state, action) {
+  return appReducer(state, action)
+}
 
 export default rootReducer

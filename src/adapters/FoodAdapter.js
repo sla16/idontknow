@@ -1,17 +1,20 @@
-import { fetchJSON } from './fetch'
+import { doCORSRequest, fetchJSON } from './fetch'
 
-export function getFoodLocations (data) {
-  const { location } = data
-  const myHeaders = {
-    Accept: 'application/json',
-    'user-key': '109ea15327f6c4fb86908330f2c13c32'
-  }
+export function getNearbyPlaces (data) {
+  const { callback, location } = data;
+  const headers = new Headers();
+  const nearbySearch = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
+  const key = 'AIzaSyDpn22UdohBQhfbn_lCY844X7um2TgpoEw'
+  const radius = 1609;  
+  const formattedLocation = `${location.latitude},${location.longitude}`
 
-  return fetchJSON(`https://developers.zomato.com/api/v2.1/locations?query=Boston`, {
-    method: 'get',
-    headers: myHeaders
-  }).then((response) => {
-    console.log(response);
-    return response
+  headers.append('Content-Type', 'application/json');
+  headers.append('Accept', 'application/json');
+
+  return doCORSRequest({
+    method: 'GET',
+    url: `${nearbySearch}location=${formattedLocation}&radius=${radius}&type=restaurant&key=${key}`
+  }, (result) => {
+    callback(result.results)
   })
 }

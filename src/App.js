@@ -1,8 +1,10 @@
 // 0099CC CCFFCC  66CCFF  003399 109ea15327f6c4fb86908330f2c13c32 //
+// AIzaSyDpn22UdohBQhfbn_lCY844X7um2TgpoEw
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import loggerMiddleware from 'redux-logger'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -19,7 +21,8 @@ const store = createStore(
   rootReducer,
   composeEnhancers(
     applyMiddleware(
-      thunkMiddleware
+      thunkMiddleware,
+      loggerMiddleware
     )
   )
 )

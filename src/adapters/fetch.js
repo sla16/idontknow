@@ -2,6 +2,22 @@ const DEFAULT_TIME_LIMIT = 300000
 const HTTP_OK_LOWER_LIMIT = 200
 const HTTP_OK_UPPER_LIMIT = 300
 
+/** Need this CORS Request or requests will be blocked **/
+const CORS_API_URL = 'https://cors-anywhere.herokuapp.com/';
+export function doCORSRequest(options, callback) {
+  var x = new XMLHttpRequest();
+  x.open(options.method, CORS_API_URL + options.url);
+  x.onload = x.onerror = function() {
+    callback(
+      JSON.parse(x.response)
+    );
+  };
+  if (/^POST/i.test(options.method)) {
+    x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  }
+  x.send(options.data);
+}
+
 function ensureSuccess (response) {
   console.log('ensureSuccess:', response)
 

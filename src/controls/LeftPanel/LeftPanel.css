@@ -13,4 +13,5 @@
 
 .LeftPanel_list {
   height: 100%;
+  overflow: auto;
 }

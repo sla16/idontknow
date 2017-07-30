@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
+import List from '../MaterialUI/List'
+import ListItem from '../MaterialUI/ListItem'
 import './LeftPanel.css';
 
-export default class LeftPanel extends Component {
+class LeftPanel extends Component {
   static contextTypes = {
     router: PropTypes.object.isRequired
   };
@@ -13,6 +16,8 @@ export default class LeftPanel extends Component {
   };
 
   render () {
+    const { places } = this.props.places
+
     return (
       <div className='LeftPanel'>
         <div className='LeftPanel__logo'>
@@ -21,9 +26,27 @@ export default class LeftPanel extends Component {
           </a>
         </div>
         <div className='LeftPanel_list'>
-          TODO: List of things, etc
+          <List>
+            {
+              Object.keys(places).map((placeId) => {
+                return (
+                  <ListItem
+                    key={placeId}
+                    leftAvatar={
+                      <img src={places[placeId].icon} alt='restaurant icon' width='32' height='32' />
+                    }
+                    primaryText={places[placeId].name} />)
+              })
+            }
+          </List>
         </div>
       </div>
     )
   };
 }
+
+function mapStateToProps ({ places }) {
+  return { places }
+}
+
+export default connect(mapStateToProps)(LeftPanel)
