@@ -2,15 +2,17 @@ import update from 'immutability-helper'
 
 import {
   getNearbyPlaces as getNearbyPlacesAdapter
-} from '../adapters/FoodAdapter'
+} from '../adapters/places'
 
-export function getNearbyPlaces (location) {
+export function getNearbyPlaces (data) {
   return (dispatch, getState) => {
     getNearbyPlacesAdapter({
       callback: (response) => {
         dispatch({ type: 'GET_NEARBY_PLACES', places: response });
       },
-      location
+      keyword: data.keyword,
+      location: data.location,
+      type: data.type
     })
   }
 }
