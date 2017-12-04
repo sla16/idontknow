@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-import Button from './controls/MaterialUI/Button'
+import LeftPanel from './controls/LeftPanel/LeftPanel';
+import TopPanel from './controls/TopPanel/TopPanel';
+import ContentPanel from './controls/ContentPanel/ContentPanel';
+
 import './Main.css';
 
 export default class Main extends Component {
@@ -31,11 +34,10 @@ export default class Main extends Component {
   render () {
     return (
       <div className="Main__center" style={{height: `${this.state.height}`}}>
-        <div className="Main__button-container">
-          <Button
-            labelMessage='Idk, food'
-            onTouchTap={this.handleFoodClick}
-            primary={true} />
+        <div>
+          <LeftPanel />
+          <TopPanel />
+          <ContentPanel />
         </div>
       </div>
     )

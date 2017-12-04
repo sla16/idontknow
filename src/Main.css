@@ -1,6 +1,6 @@
 .Main__center {
   position: relative;
-  text-align: center;
+  text-align: left;
   transition: height 2s;
 }
 

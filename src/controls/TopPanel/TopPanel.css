@@ -2,11 +2,11 @@
   background-color: white;
   border: solid #0099CC 1px;
   display: flex;
-  height: 6em;
-  left: 15em;
+  height: 100px;
+  left: 250px;
   margin-left: 1px;
   position: fixed;
-  width: calc(100% - 15em);
+  width: calc(100% - 250px);
 }
 
 .TopPanel__buttons-outer-container {
@@ -17,16 +17,23 @@
 }
 
 .TopPanel__buttons-inner-container {
+  max-height: 100px;
   padding: 0 10px;
-  position: absolute;
   right: 0;
-}
-
-.TopPanel__select-field {
-  top: 25px;
 }
 
 .TopPanel__select-field,
 .TopPanel__text-field {
-  margin: 0 15px;
+  height: 48px !important;
+  margin-right: 10px;
+  width: 200px !important;
+  vertical-align: middle;
+}
+
+.TopPanel__text-field label {
+  top: calc(100% - 28px) !important;
+}
+
+.TopPanel__text-field input {
+  margin-top: 7px !important;
 }

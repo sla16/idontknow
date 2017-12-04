@@ -67,7 +67,6 @@ class TopPanel extends Component {
 
     return (
       <div className='TopPanel'>
-        TODO: Options/Filters/Etc
         <div className='TopPanel__buttons-outer-container'>
           <div className='TopPanel__buttons-inner-container'>
             <TextField
@@ -111,7 +110,7 @@ class TopPanel extends Component {
 
             <Button
               disabled={!enabled}
-              labelMessage='Nearby places'
+              labelMessage='Search'
               onTouchTap={this.onGetNearbyPlaces}
               primary={true} />
             </div>

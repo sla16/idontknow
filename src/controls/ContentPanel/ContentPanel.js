@@ -8,6 +8,6 @@ export default class ContentPanel extends Component {
       <div className='ContentPanel'>
         TODO: Main display of thing
       </div>
-    )
+    );
   }
 }
