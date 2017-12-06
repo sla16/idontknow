@@ -12,8 +12,8 @@ export default class Main extends Component {
     super(props, context);
     this.state = {
       height: '100%'
-    }
-  };
+    };
+  }
 
   static contextTypes = {
     router: PropTypes.object.isRequired
@@ -26,9 +26,9 @@ export default class Main extends Component {
       setTimeout(() => {
         setTimeout(() => {
           this.context.router.history.push('/food');
-        }, 200)
-      }, 2000)
-    })
+        }, 200);
+      }, 2000);
+    });
   };
 
   render () {
@@ -40,6 +40,6 @@ export default class Main extends Component {
           <ContentPanel />
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

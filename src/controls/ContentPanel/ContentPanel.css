@@ -6,3 +6,26 @@
   top: 100px;
   width: calc(100% - 250px);
 }
+
+.ContentPanel__information {
+  height: 100%;
+}
+
+.ContentPanel__place-name,
+.ContentPanel__place-hours,
+.ContentPanel__place-rating {
+  text-align: center;
+}
+
+.ContentPanel__place-name {
+  font-size: 50px;
+  padding: 10px;
+}
+
+.ContentPanel__open {
+  color: #4BB543;
+}
+
+.ContentPanel__closed {
+  color: #ff0033;
+}

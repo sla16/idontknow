@@ -17,7 +17,7 @@ const FOOD_TYPES = [
   'Delivery Food',
   'Restaurant',
   'Takeaway Food'
-]
+];
 
 class TopPanel extends Component {
   constructor (props) {
@@ -113,15 +113,15 @@ class TopPanel extends Component {
               labelMessage='Search'
               onTouchTap={this.onGetNearbyPlaces}
               primary={true} />
-            </div>
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators({ getNearbyPlaces }, dispatch)
+  return bindActionCreators({ getNearbyPlaces }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(TopPanel)
+export default connect(null, mapDispatchToProps)(TopPanel);

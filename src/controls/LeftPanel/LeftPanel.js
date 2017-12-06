@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import List from '../MaterialUI/List'
-import ListItem from '../MaterialUI/ListItem'
+import List from '../MaterialUI/List';
+import ListItem from '../MaterialUI/ListItem';
 import './LeftPanel.css';
 
+import { selectPlace } from '../../reducers/places';
+
 class LeftPanel extends Component {
+  constructor (props) {
+    super(props);
+
+    this.onSelectPlace = this.onSelectPlace.bind(this);
+  }
+
   static contextTypes = {
     router: PropTypes.object.isRequired
   };
@@ -15,8 +24,12 @@ class LeftPanel extends Component {
     this.context.router.history.push('/');
   };
 
+  onSelectPlace = (place) => {
+    this.props.selectPlace(place);
+  }
+
   render () {
-    const { places } = this.props.places
+    const { places } = this.props.places;
 
     return (
       <div className='LeftPanel'>
@@ -35,18 +48,23 @@ class LeftPanel extends Component {
                     leftAvatar={
                       <img src={places[placeId].icon} alt='restaurant icon' width='32' height='32' />
                     }
-                    primaryText={places[placeId].name} />)
+                    onTouchTap={this.onSelectPlace.bind(this, places[placeId])}
+                    primaryText={places[placeId].name} />);
               })
             }
           </List>
         </div>
       </div>
-    )
-  };
+    );
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators({ selectPlace }, dispatch);
 }
 
 function mapStateToProps ({ places }) {
-  return { places }
+  return { places };
 }
 
-export default connect(mapStateToProps)(LeftPanel)
+export default connect(mapStateToProps, mapDispatchToProps)(LeftPanel);
