@@ -1,21 +1,23 @@
 import update from 'immutability-helper';
 
 import {
-  getNearbyPlaces as getNearbyPlacesAdapter
+  getNearbyPlaces as getNearbyPlacesAdapter,
+  selectPlace as selectPlaceAdapter
 } from '../adapters/places';
 
 export function selectPlace (place) {
   return (dispatch) => {
-    dispatch({ type: 'SET_SELECTED_PLACE', place });
+    selectPlaceAdapter({
+      callback: (response) => dispatch({ type: 'SET_SELECTED_PLACE', place: response }),
+      place
+    });
   };
 }
 
 export function getNearbyPlaces (data) {
   return (dispatch) => {
     getNearbyPlacesAdapter({
-      callback: (response) => {
-        dispatch({ type: 'GET_NEARBY_PLACES', places: response });
-      },
+      callback: (response) => dispatch({ type: 'GET_NEARBY_PLACES', places: response }),
       keyword: data.keyword,
       location: data.location,
       type: data.type

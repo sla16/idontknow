@@ -7,13 +7,32 @@
   width: calc(100% - 250px);
 }
 
-.ContentPanel__information {
+.ContentPanel__container {
+  display: flex;
   height: 100%;
 }
 
-.ContentPanel__place-name,
-.ContentPanel__place-hours,
-.ContentPanel__place-rating {
+.ContentPanel__place-photo {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 300px;
+}
+
+.ContentPanel__place-photo img {
+  margin: 20px 25px;
+}  
+
+.ContentPanel__information {
+  display: inline-block;
+  height: 100%;
+  width: calc(100% - 300px);
+}
+
+.ContentPanel__information-text,
+.ContentPanel__place-name {
   text-align: center;
 }
 

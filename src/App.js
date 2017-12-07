@@ -2,9 +2,9 @@
 // AIzaSyDpn22UdohBQhfbn_lCY844X7um2TgpoEw
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { applyMiddleware, compose, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import loggerMiddleware from 'redux-logger'
+import { applyMiddleware, compose, createStore } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import loggerMiddleware from 'redux-logger';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -12,10 +12,10 @@ import Main from './Main';
 import MainFood from './pages/MainFood';
 import NoMatch from './pages/NoMatch';
 
-import rootReducer from './reducers/Root'
+import rootReducer from './reducers/Root';
 import './App.css';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
@@ -25,7 +25,7 @@ const store = createStore(
       loggerMiddleware
     )
   )
-)
+);
 
 class App extends Component {
   constructor (props) {

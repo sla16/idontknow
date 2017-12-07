@@ -19,23 +19,34 @@ class ContentPanel extends Component {
       <div className='ContentPanel'>
         {
           selectedPlace &&
-          <div className='ContentPanel__information'>
-            <div className='ContentPanel__place-name'>
-              {selectedPlace.name}
+          <div className='ContentPanel__container'>
+            <div className='ContentPanel__place-photo'>
+              <img src={selectedPlace.photoUrl} />
             </div>
+            <div className='ContentPanel__information'>
+              <div className='ContentPanel__place-name'>
+                {selectedPlace.name}
+              </div>
 
-            <div className='ContentPanel__place-hours'>
-              <span>
-                {<span className={'ContentPanel__' + (open ? 'open' : 'closed')}>
-                  {open ? 'Open Now' : 'Closed'}
-                </span>}
-              </span>
-            </div>
+              <div className='ContentPanel__information-text'>
+                <span>
+                  {<span className={'ContentPanel__' + (open ? 'open' : 'closed')}>
+                    {open ? 'Open Now' : 'Closed'}
+                  </span>}
+                </span>
+              </div>
 
-            <div className='ContentPanel__place-rating'>
-              <span>
-                {<span>Rating: {selectedPlace.rating}</span>}
-              </span>
+              <div className='ContentPanel__information-text'>
+                <span>
+                  {<span>Rating: {selectedPlace.rating}</span>}
+                </span>
+              </div>
+
+              <div className='ContentPanel__information-text'>
+                <span>
+                  {<span>Address: {selectedPlace.vicinity}</span>}
+                </span>
+              </div>
             </div>
           </div>
         }
